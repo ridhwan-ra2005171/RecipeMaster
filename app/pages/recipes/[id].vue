@@ -13,6 +13,19 @@ if (error.value) {
     statusMessage: error.value?.statusMessage,
   });
 }
+
+useSeoMeta({
+  title: data.value?.name,
+  description: 'Recipies tailored to your taste',
+  ogTitle: data.value?.name,
+  ogDescription: '[og:description]',
+  ogImage: data.value?.image,
+  ogUrl: `https:/localhost:3001/recipes/${data.value?.id}`,
+  twitterTitle: data.value?.name,
+  twitterDescription: '[twitter:description]',
+  twitterImage: data.value?.image,
+  twitterCard: 'summary'
+})
 </script>
 
 <template>
