@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import { type RecipeResponse } from '~~/types/types';
+import { type Recipe } from '~~/types/types';
 
+const { id } = useRoute().params;
 
-const {id} = useRoute().params;
+const { data, error } = await useFetch<Recipe>(
+  `https://dummyjson.com/recipes/${id}`
+);
 
-const {data, error} = await useFetch<RecipeResponse>(`https://dummyjson.com/recipes/${id}`);
-
+if (error.value) {
+  throw createError({
+    statusCode: error.value?.statusCode,
+    statusMessage: error.value?.statusMessage,
+  });
+}
 </script>
 
 <template>
@@ -61,7 +68,10 @@ const {data, error} = await useFetch<RecipeResponse>(`https://dummyjson.com/reci
     <div>
       <h2 class="text-3xl font-medium mb-4">Instructions</h2>
       <ul class="flex flex-col text-lg gap-4">
-        <li v-for="(instruction, index) in data?.instructions" class="flex gap-2">
+        <li
+          v-for="(instruction, index) in data?.instructions"
+          class="flex gap-2"
+        >
           <span
             class="flex items-center justify-center bg-dodgeroll-gold w-7 h-7 rounded-full text-white text-sm"
           >
