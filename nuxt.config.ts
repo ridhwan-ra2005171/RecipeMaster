@@ -32,6 +32,9 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
   ],
+  image:{
+    domains: ['https://dummyjson.com']
+  },
 
   googleFonts: {
     families: {
