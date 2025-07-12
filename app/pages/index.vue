@@ -6,7 +6,7 @@ import { type RecipeResponse } from "~~/types/types";
 //for basic usages, just use useFetch
 
 const { data, error } = await useFetch<RecipeResponse>(
-  "https://dummyjson.com/recipes?limit=20"
+  "https://dummyjson.com/recipes?limit=66"
 );
 
 // Sorting state
@@ -17,7 +17,7 @@ const sortOrder = ref('asc'); // 'asc' or 'desc'
 const searchQuery = ref('');
 
 // Computed property for filtered and sorted recipes
-const filteredAndSortedRecipes = computed(() => {
+const filteredAndSortedRecipes = computed(() => { 
   if (!data.value?.recipes) return [];
   
   let recipes = [...data.value.recipes];
@@ -59,6 +59,17 @@ const handleSortChange = (newSortBy: string) => {
   }
 };
 
+// Function to scroll to recipes section
+const scrollToRecipes = () => {
+  const recipesSection = document.getElementById('recipes-section');
+  if (recipesSection) {
+    recipesSection.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
+
 useSeoMeta({
   title: "Nuxtcipes",
   description: "Recipes for you to cook!",
@@ -87,7 +98,8 @@ useSeoMeta({
             Discover recipes helping you to find the easiest way to cook.
           </p>
           <button
-            class="px-4 py-2 text-white self-start bg-dodgeroll-gold rounded-md text-lg cursor-pointer"
+            @click="scrollToRecipes"
+            class="px-4 py-2 text-white self-start bg-dodgeroll-gold rounded-md text-lg cursor-pointer hover:bg-opacity-90 transition-colors"
           >
             Browse Recipes
           </button>
@@ -103,7 +115,7 @@ useSeoMeta({
         </div>
       </div>
     </section>
-    <section class="py-20 container">
+    <section id="recipes-section" class="py-20 container">
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
         <div>
           <h2 class="text-3xl lg:text-5xl mb-2">Discover, Create, Share</h2>
