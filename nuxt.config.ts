@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@nuxt/icon',
     '@nuxt/image',
+    '@nuxtjs/color-mode',
   ],
   image:{
     domains: ['https://dummyjson.com']

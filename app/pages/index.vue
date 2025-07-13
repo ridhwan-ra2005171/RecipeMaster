@@ -86,7 +86,7 @@ useSeoMeta({
 
 <template>
   <main>
-    <section class="bg-[#f1f1f1]">
+    <section class="bg-[#f1f1f1] dark:bg-[#32445d]">
       <div
         class="container flex flex-col lg:flex-row items-center py-20 gap-10"
       >
@@ -147,7 +147,7 @@ useSeoMeta({
         
         <!-- Sort Controls -->
         <div class="flex items-center gap-4">
-          <label for="sort-select" class="text-sm font-semibold text-gray-700">Sort by:</label>
+          <label for="sort-select" class="text-sm font-semibold">Sort by:</label>
           <div class="flex items-center gap-2">
             <button
               @click="handleSortChange('name')"

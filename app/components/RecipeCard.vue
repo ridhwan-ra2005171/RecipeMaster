@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="shadow rounded-md">
+  <div class="shadow rounded-md dark:bg-gray-700">
     <NuxtImg
       sizes="xs:100vw sm:50vw lg:400px"
       format="webp"
@@ -18,7 +18,7 @@ defineProps<{
     />
     <div class="flex flex-col py-6 px-4">
       <p class="text-2xl font-semibold mb-2">{{ recipe.name }}</p>
-      <div class="font-normal w-full bg-white/80 flex gap-8 text-xl mb-4">
+      <div class="font-normal w-full  flex gap-8 text-xl mb-4">
         <div class="flex items-center gap-1">
           <Icon name="mdi:clock-time-eight-outline" style="color: #f79f1a" />
           <span>{{ recipe.cookTimeMinutes }}</span>
