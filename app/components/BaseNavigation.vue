@@ -13,7 +13,7 @@ const toggleColorMode = () => {
     <nav class="flex container items-center">
       <NuxtLink to="/" class="flex gap-1 items-center">
         <NuxtImg width="56px" densities="2x" src="/icon-green.png" alt="" format="webp"/>
-        <span class="text-3xl font-bold">Nuxtcipes</span>
+        <span class="text-3xl font-bold">RecipeMaster</span>
       </NuxtLink>
       <ul class="flex gap-6 ml-auto text-xl font-bold capitalize items-center">
         <li>

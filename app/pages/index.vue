@@ -71,13 +71,13 @@ const scrollToRecipes = () => {
 };
 
 useSeoMeta({
-  title: "Nuxtcipes",
+  title: "RecipeMaster",
   description: "Recipes for you to cook!",
-  ogTitle: "Nuxtcipes",
+  ogTitle: "RecipeMaster",
   ogDescription: "Recipes for you to cook!",
   ogImage: "/nuxt-course-hero.png",
   ogUrl: `http:localhost:3000`,
-  twitterTitle: "Nuxtcipes",
+  twitterTitle: "RecipeMaster",
   twitterDescription: "Recipes for you to cook!",
   twitterImage: "nuxt-course-hero.png",
   twitterCard: "summary",
